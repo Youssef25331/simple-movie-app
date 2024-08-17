@@ -1,0 +1,33 @@
+
+@import '~bootstrap/scss/bootstrap';
+
+:root {
+  --primary-text: hsl(0, 0%, 6%);
+  --secondary-text: green;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: purple;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 16px 24px;
+  padding: 0px 16px;
+}
+.tabs {
+  padding: 0px;
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  font-size: 16px;
+  gap: 16px;
+}
+li:hover {
+  color: var(secondary-text);
+}
+a {
+  text-decoration: none;
+  color: var(--primary-text);
+}
+.btn-lg {
+  color: black;
+}
