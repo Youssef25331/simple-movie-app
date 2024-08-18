@@ -1,14 +1,17 @@
 
-import { Button, Form, Container, Nav, Navbar, NavDropdown, Row, Col } from "react-bootstrap";
+import { Collapse, Button, Form, Container, Nav, Navbar, NavDropdown, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
-function MyNavbar() {
+function MyNavbar({theme}) {
+
+  const [searchOpen, setSearchOpen] = useState(false)
 
   return (
-    <Navbar expand="sm" bg="dark" variant='dark'>
+    <Navbar expand="lg" bg={theme} variant={theme}>
       <Container>
-        <Navbar.Brand href="">MovieDB</Navbar.Brand>
+        <Navbar.Brand href="" className="my-2">MovieDB</Navbar.Brand>
         <Navbar.Toggle aria-controls="toggle-navbar" />
         <Navbar.Collapse id="toggle-navbar">
           <Nav
@@ -23,12 +26,15 @@ function MyNavbar() {
               TV Shows
             </Nav.Link>
           </Nav>
-          <Form className="d-flex align-items-center p-2">
-            <FontAwesomeIcon size="lg" icon={faSearch} className='fa-icon' />
-            <Form.Control type="search" className="mx-2" placeholder="search" />
+          <Form className="d-flex align-items-center" >
+            <FontAwesomeIcon size="lg" /* visibility={searchOpen?"hidden":''} */ icon={faSearch} className='fa-icon p-1' onClick={() => { setSearchOpen(!searchOpen) }} />
+            <Collapse in={searchOpen} timeout={10000} dimension={'width'}>
+              <div className="searchWrapper">
+                {/* Fix choppy opening animation */}
+                <Form.Control type="search" className="mx-2" placeholder="search" />
+              </div>
+            </Collapse>
           </Form>
-          <Nav>
-          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
