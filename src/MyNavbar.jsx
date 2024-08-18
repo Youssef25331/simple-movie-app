@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
-function MyNavbar({theme}) {
+function MyNavbar({ theme }) {
 
   const [searchOpen, setSearchOpen] = useState(false)
 
