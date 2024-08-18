@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
 import { Image } from "react-bootstrap"
 import FetchingComponent from "./FetchComponent"
-
+import { Alert } from "react-bootstrap"
 function MainContent() {
 
-  const { isLoading, data,url } = FetchingComponent
+  const { isLoading, data, url } = FetchingComponent()
+  console.log(data)
+
   console.log(isLoading)
   return (
     <div className="d-flex overflow-auto main-wrapper">
