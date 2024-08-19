@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
+import Carousel from "react-multi-carousel";
 
-function Carousel({ url, data, theme }) {
+
+function SlideCarousel({ data, theme }) {
 
   return (
-    <div className="carousel-wrapper">
+    <Carousel >
       {
         data.results.map((item) =>
-          <div className="hi">
+          <div>
             {item.id}
+
           </div>
         )
       }
-    </div>
+    </Carousel>
   )
 }
-export default Carousel;
+export default SlideCarousel;

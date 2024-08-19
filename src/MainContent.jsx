@@ -2,11 +2,11 @@ import { useEffect, useState } from "react"
 import { Image } from "react-bootstrap"
 import FetchingComponent from "./FetchComponent"
 import { Alert } from "react-bootstrap"
-import Carousel from "./Carousel"
+import SlideCarousel from "./Carousel"
 
 function MainContent() {
 
-  const { isLoading, data, url } = FetchingComponent()
+  const { isLoading, data } = FetchingComponent()
   console.log(data)
   return (
     <div className="d-flex overflow-auto main-wrapper">
@@ -18,7 +18,7 @@ https://media.istockphoto.com/id/1361039427/vector/retro-download-bar-alert-wind
         "/>
           )
           : (
-            <Carousel data={data} />
+            <SlideCarousel data={data} />
           )
       }
     </div>
