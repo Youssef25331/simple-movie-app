@@ -1,4 +1,10 @@
-$primary:#6e10f3;
+$primary:#630963;
+$dark:#080108;
+$darker:#000;
+
+@import '~bootstrap/scss/bootstrap';
+@import "react-multi-carousel/lib/styles.css";
+
 .fa-icon{
   color:white;
   transition: 0.3s;
@@ -6,4 +12,12 @@ $primary:#6e10f3;
   color:#a2c1c9;
   }
 }
-@import '~bootstrap/scss/bootstrap';
+
+body{
+  background-color: $darker;
+}
+
+h2{
+  color:white;
+}
+

@@ -6,7 +6,7 @@ function MainContent() {
 
   return (
     <>
-      <SlideCarousel/>
+      <SlideCarousel />
     </>
 
   )

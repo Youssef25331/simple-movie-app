@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import { Image } from "react-bootstrap";
-import FetchingComponent from "./FetchComponent";
-
+import { Container, Image } from "react-bootstrap"; import FetchingComponent from "./FetchComponent";
 function SlideCarousel({ url, theme }) {
 
   const responsive = {
@@ -24,26 +21,32 @@ function SlideCarousel({ url, theme }) {
   const { isLoading, data } = FetchingComponent(url)
 
   return (
-    !isLoading ? (
+    <Container variant='dark' fluid>
 
-      <Carousel
-        responsive={responsive}
-        infinite
-        slidesToSlide={2}
-        transitionDuration={700}
-        containerClass="carousel-container"
-        centerMode
-        dotListClass="custom-dot-list-style"
-      >
-        {
-          data.results.map((items) => (
-            <Image fluid key={items.id} src={"https://image.tmdb.org/t/p/w200" + items.poster_path}></Image>
-          ))
-        }
-      </Carousel >
-    ) : (
-      <></>
-    )
+      <h2>Trending</h2>
+      {
+        !isLoading ? (
+          <Carousel
+            responsive={responsive}
+            infinite
+            slidesToSlide={2}
+            transitionDuration={700}
+            containerClass="carousel-container"
+            centerMode
+            dotListClass="custom-dot-list-style"
+          >
+            {
+              data.results.map((items) => (
+                <Image fluid key={items.id} src={"https://image.tmdb.org/t/p/w500" + items.poster_path}></Image>
+              ))
+            }
+          </Carousel >
+        ) : (
+          <>loading</>
+        )
+      }
+    </Container>
+
   )
 }
 export default SlideCarousel;
