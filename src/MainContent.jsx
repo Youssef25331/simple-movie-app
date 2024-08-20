@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react"
 import SlideCarousel from "./SlideCarousel"
+import { Image } from "react-bootstrap"
 
 function MainContent() {
 
 
   return (
     <>
-      <SlideCarousel />
+      <SlideCarousel title={"Trending Movies"} />
+
     </>
 
   )

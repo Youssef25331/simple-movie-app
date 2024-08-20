@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import { Container, Image } from "react-bootstrap"; import FetchingComponent from "./FetchComponent";
-function SlideCarousel({ url, theme }) {
+
+function SlideCarousel({ url, title, theme }) {
 
   const responsive = {
     desktop: {
@@ -19,11 +20,11 @@ function SlideCarousel({ url, theme }) {
   };
 
   const { isLoading, data } = FetchingComponent(url)
-
+  console.log(data)
   return (
     <Container variant='dark' fluid>
 
-      <h2>Trending</h2>
+      <h2>{title}</h2>
       {
         !isLoading ? (
           <Carousel
