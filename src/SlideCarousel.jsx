@@ -19,10 +19,10 @@ function SlideCarousel({ url, title, theme }) {
     }
   };
 
-  const { isLoading, data } = FetchingComponent(url)
-  console.log(data)
+  const { isLoading, data } = FetchingComponent(url=url)
+
   return (
-    <Container variant='dark' fluid>
+    <Container variant='dark' className="my-4" fluid>
 
       <h2>{title}</h2>
       {
