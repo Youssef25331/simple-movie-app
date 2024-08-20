@@ -8,8 +8,20 @@ function MainContent() {
 
   const { isLoading, data } = FetchingComponent()
 
+  console.log(isLoading)
   return (
-            <SlideCarousel data={data} />
+    <>
+      {
+
+      isLoading?(
+      <div className="hi"></div>
+      ):(
+
+      <SlideCarousel data={data} />
+      )
+      }
+    </>
+
   )
 }
 export default MainContent

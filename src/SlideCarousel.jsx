@@ -12,7 +12,7 @@ function SlideCarousel({ data, theme }) {
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3
+      items: 5
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -23,23 +23,22 @@ function SlideCarousel({ data, theme }) {
       items: 1
     }
   };
-
   return (
+
     <Carousel
       responsive={responsive}
-      ssr={true} // means to render carousel on server-side.
-      infinite={true}
-      autoPlaySpeed={1000}
-      keyBoardControl={true}
-      transitionDuration={500}
+      infinite
+      transitionDuration={2000}
       containerClass="carousel-container"
-      removeArrowOnDeviceType={["tablet", "mobile"]}
+      centerMode
       dotListClass="custom-dot-list-style"
     >
-      <div>Itm 3</div>
-      <div>Item 2</div>
-      <div>Item 4</div>
-    </Carousel>
+      {
+        data.results.map((items) => (
+          <Image  src={"https://image.tmdb.org/t/p/w200" + items.poster_path}></Image>
+        ))
+      }
+    </Carousel >
   )
 }
 export default SlideCarousel;

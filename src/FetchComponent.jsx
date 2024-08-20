@@ -17,6 +17,7 @@ export default function FetchingComponent(url = 'https://api.themoviedb.org/3/tr
         const response = await fetch(url, overideOptions)
         if (!response.ok) {
           const error = await response.json();
+          console.log(error)
         }
         const data = await response.json()
         setData(data)
@@ -28,5 +29,6 @@ export default function FetchingComponent(url = 'https://api.themoviedb.org/3/tr
     fetchData()
 
   }, [])
+
   return { isLoading, data }
 }
