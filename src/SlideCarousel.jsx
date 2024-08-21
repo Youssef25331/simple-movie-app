@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import { Container, Image } from "react-bootstrap"; import FetchingComponent from "./FetchComponent";
 import CustomArrow from "./CustomArrow";
+import Card from 'react-bootstrap/Card';
 
 function SlideCarousel({ url, title, theme }) {
 
@@ -37,7 +38,7 @@ function SlideCarousel({ url, title, theme }) {
               <CustomArrow  variant={'right'}/>
             }
             infinite
-            slidesToSlide={5}
+            slidesToSlide={6}
             transitionDuration={1200}
             customTransition="all 1.2s"
             containerClass="carousel-container"
@@ -46,7 +47,8 @@ function SlideCarousel({ url, title, theme }) {
           >
             {
               data.results.map((items) => (
-                <Image fluid key={items.id} src={"https://image.tmdb.org/t/p/w500" + items.poster_path}></Image>
+                <Image className="px-1" fluid key={items.id} src={"https://image.tmdb.org/t/p/w500" + items.poster_path}></Image>
+                
               ))
             }
           </Carousel >
