@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import { Container, Image } from "react-bootstrap"; import FetchingComponent from "./FetchComponent";
+import CustomArrow from "./CustomArrow";
 
 function SlideCarousel({ url, title, theme }) {
 
@@ -19,7 +20,7 @@ function SlideCarousel({ url, title, theme }) {
     }
   };
 
-  const { isLoading, data } = FetchingComponent(url=url)
+  const { isLoading, data } = FetchingComponent(url = url)
 
   return (
     <Container variant='dark' className="my-4" fluid>
@@ -29,9 +30,16 @@ function SlideCarousel({ url, title, theme }) {
         !isLoading ? (
           <Carousel
             responsive={responsive}
+            customLeftArrow={
+              <CustomArrow />
+            }
+            customRightArrow={
+              <CustomArrow  variant={'right'}/>
+            }
             infinite
-            slidesToSlide={2}
-            transitionDuration={700}
+            slidesToSlide={5}
+            transitionDuration={1200}
+            customTransition="all 1.2s"
             containerClass="carousel-container"
             centerMode
             dotListClass="custom-dot-list-style"
