@@ -36,9 +36,6 @@ h2 {
     rgba(0, 0, 0, 0) 100%
   );
 
-  .fa-icon {
-    left: 10%;
-  }
   &:hover {
     cursor: pointer;
     opacity: 0.7;
@@ -51,10 +48,6 @@ h2 {
       rgba(0, 0, 0, 0.75) 50%,
       rgba(0, 0, 0, 0) 100%
     );
-
-    .fa-icon {
-      left: 75%;
-    }
   }
 }
 .overlay {
@@ -69,12 +62,12 @@ h2 {
     background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.6022058481595763) 63%,
+      rgba(0, 0, 0, 0.6022058481595763) 50%,
       rgba(0, 0, 0, 1) 100%
     );
     opacity: 1; // Adjust opacity if necessary
   }
 }
-.carocaro {
-  margin-top: -10%;
+.carousels-container {
+  margin-top: -20%;
 }
