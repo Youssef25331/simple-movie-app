@@ -20,7 +20,7 @@ h2 {
   color: white;
 }
 .custom-arrow {
-  transition: all 0.5s ;
+  transition: all 0.5s;
   @include media-breakpoint-up(md) {
     width: 9%;
   }
@@ -41,7 +41,7 @@ h2 {
   }
   &:hover {
     cursor: pointer;
-    opacity: 0.7
+    opacity: 0.7;
   }
   &-right {
     @extend .custom-arrow;
@@ -57,11 +57,24 @@ h2 {
     }
   }
 }
-.main-image{
-background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)), var(--img);
-background: rgb(0,0,0);
-background: linear-gradient(180deg, rgba(0,0,0,0.5069677529214811) 0%, rgba(0,0,0,0.6022058481595763) 42%, rgba(0,0,0,1) 100%);
+.overlay {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.6022058481595763) 63%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    opacity: 1; // Adjust opacity if necessary
+  }
 }
-.carocaro{
+.carocaro {
   margin-top: -10%;
 }

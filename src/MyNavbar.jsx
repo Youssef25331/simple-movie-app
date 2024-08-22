@@ -9,7 +9,7 @@ function MyNavbar({ theme }) {
   const [searchOpen, setSearchOpen] = useState(false)
 
   return (
-    <Navbar expand="lg" bg={theme} variant={theme}>
+    <Navbar sticky="top" expand="lg" bg={theme} variant={theme}>
       <Container>
         <Navbar.Brand href="" className="my-2">MovieDB</Navbar.Brand>
         <Navbar.Toggle aria-controls="toggle-navbar" />

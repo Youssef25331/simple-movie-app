@@ -9,13 +9,15 @@ function MainContent() {
 
   return (
     <div className="p-4">
-      {
-        isLoading ? ('hi') : <Image className="p-1 main-image" fluid src={"https://image.tmdb.org/t/p/original"+data.results[Math.floor(Math.random() * data.results.length)].backdrop_path} />
-      }
-      <div className="carocaro">
+      <div className="main-image-container overlay">
 
-      <SlideCarousel title={"Trending Movies"} />
-      <SlideCarousel url={'https://api.themoviedb.org/3/trending/tv/day?language=en-US'} title={"Trending TV"} />
+        {
+          isLoading ? (<h1>Loading</h1>) : <Image className="bg-primary bg-gradient main-image" fluid src={"https://image.tmdb.org/t/p/original" + data.results[Math.floor(Math.random() * data.results.length)].backdrop_path} />
+        }
+      </div>
+      <div className="p-4 carocaro">
+        <SlideCarousel title={"Trending Movies"} />
+        <SlideCarousel url={'https://api.themoviedb.org/3/trending/tv/day?language=en-US'} title={"Trending TV"} />
       </div>
     </div>
 

@@ -24,12 +24,13 @@ function SlideCarousel({ url, title, theme }) {
   const { isLoading, data } = FetchingComponent(url = url)
 
   return (
-    <Container variant='dark' className="my-4" fluid>
+    <Container variant='dark' className="my-5" fluid>
 
       <h2>{title}</h2>
       {
         !isLoading ? (
           <Carousel
+             
             responsive={responsive}
             customLeftArrow={
               <CustomArrow />
