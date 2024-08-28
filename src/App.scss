@@ -28,7 +28,7 @@ h2 {
     width: 8%;
   }
   width: 13%;
-  height: 100%;
+  height: calc(100% - 16vh);
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 1) 0%,
@@ -49,6 +49,24 @@ h2 {
       rgba(0, 0, 0, 0) 100%
     );
   }
+}
+.carousel-container {
+/*   padding to fix hover overflow scroll issue  */
+  padding: 8vh 0px;
+  overflow-y: visible;
+  margin-bottom: -8vh;
+
+  li {
+    transition: 0.5s ease-in-out;
+    &:hover {
+      z-index: 100;
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+  }
+}
+.carousel-image {
+  height: 100%;
 }
 .overlay {
   position: relative;
