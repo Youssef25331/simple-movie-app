@@ -51,15 +51,20 @@ h2 {
   }
 }
 .carousel-container {
-/*   padding to fix hover overflow scroll issue  */
+  /*   padding to fix hover overflow scroll issue  */
   padding: 8vh 0px;
   overflow-y: visible;
-  margin-bottom: -8vh;
+
+  margin-top: -4vh;
+  margin-bottom: -10vh;
 
   li {
     transition: 0.5s ease-in-out;
     &:hover {
-      z-index: 100;
+      .custom-arrow {
+        display: none;
+      }
+      z-index: 100 !important;
       cursor: pointer;
       transform: scale(1.2);
     }
