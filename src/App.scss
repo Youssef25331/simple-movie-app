@@ -54,12 +54,11 @@ h2 {
   /*   padding to fix hover overflow scroll issue  */
   padding: 8vh 0px;
   overflow-y: visible;
-
   margin-top: -4vh;
   margin-bottom: -10vh;
 
   li {
-    transition: 0.5s ease-in-out;
+    transition: 0.3s ease-in-out;
     &:hover {
       .custom-arrow {
         display: none;

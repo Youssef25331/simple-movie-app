@@ -2,10 +2,11 @@
 import { Collapse, Button, Form, Container, Nav, Navbar, NavDropdown, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AppTheme } from "./App";
 
-function MyNavbar({ theme }) {
-
+function MyNavbar() {
+  const [theme, setTheme] = useContext(AppTheme)
   const [searchOpen, setSearchOpen] = useState(false)
 
   return (

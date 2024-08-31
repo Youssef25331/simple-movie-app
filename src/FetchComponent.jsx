@@ -1,6 +1,7 @@
+//should reimplement with axion
 import { useEffect, useState } from "react"
-export default function FetchingComponent(url = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US', options = {}, theme = 'dark') {
 
+export default function FetchingComponent(url = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US', options = {}) {
   const [isLoading, setIsLoading] = useState(true)
   const [data, setData] = useState()
   const defaultOptions = {
