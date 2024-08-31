@@ -3,7 +3,7 @@ import SlideCarousel from "./SlideCarousel"
 import { Image } from "react-bootstrap"
 import FetchingComponent from "./FetchComponent"
 
-function MainContent() {
+function HomePage() {
 
   const { isLoading, data } = FetchingComponent()
 
@@ -29,4 +29,4 @@ function MainContent() {
 
   )
 }
-export default MainContent
+export default HomePage 

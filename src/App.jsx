@@ -1,6 +1,6 @@
 import "./App.scss";
 import MyNavbar from "./MyNavbar";
-import MainContent from "./MainContent";
+import HomePage from "./HomePage";
 import { useState, createContext } from "react";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <div className="app">
       <AppTheme.Provider value={[theme, setTheme]}>
         <MyNavbar />
-        <MainContent />
+        <HomePage />
       </AppTheme.Provider>
     </div>
   );
