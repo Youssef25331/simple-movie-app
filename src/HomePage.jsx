@@ -8,11 +8,17 @@ function HomePage() {
   const { isLoading, data } = FetchingComponent()
 
   return (
-    <div className="">
+    <div>
       <div className="main-image-container overlay">
 
         {
-          isLoading ? (<h1>Loading</h1>) : <Image className="bg-primary bg-gradient main-image" fluid src={"https://image.tmdb.org/t/p/original" + data.results[Math.floor(Math.random() * data.results.length)].backdrop_path} />
+          isLoading ? (<h1>Loading</h1>) :
+
+            <div className="stuff">
+              <Image className="bg-primary bg-gradient main-image" fluid src={"https://image.tmdb.org/t/p/original" + data.results[Math.floor(Math.random() * data.results.length)].backdrop_path} />
+            </div>
+
+
         }
       </div>
       <div className="p-4 position-relative carousels-container">
