@@ -3,6 +3,7 @@ import HomePage from "./HomePage";
 import { useState, createContext } from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import MyNavbar from "./MyNavbar";
+import Details from "./pages/Details";
 
 function App() {
   const [theme, setTheme] = useState("dark");
@@ -16,6 +17,10 @@ function App() {
           <Link to="/">Click here to go back</Link>
         </h1>
       ),
+    },
+    {
+      path: "test",
+      element: <Details />,
     },
   ]);
 

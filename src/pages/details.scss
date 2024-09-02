@@ -1,0 +1,22 @@
+.details-background {
+  height: 60vh;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  background-image: url(https://image.tmdb.org/t/p/original/jwoaKYVqPgYemFpaANL941EF94R.jpg);
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, black, rgba(black, 0));
+  }
+
+}
+.details-image {
+  width: 18vw;
+}

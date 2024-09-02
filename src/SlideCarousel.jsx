@@ -49,6 +49,7 @@ function SlideCarousel({ url, title }) {
                 className="px-1 carousel-image"
                 key={items.id}
                 src={"https://image.tmdb.org/t/p/w500" + items.poster_path}
+                rounded
                 fluid
               ></Image>
             </a>
