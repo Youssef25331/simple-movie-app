@@ -15,8 +15,14 @@
     height: 100%;
     background-image: linear-gradient(to top, black, rgba(black, 0));
   }
-
+}
+.details-hero-container {
+  height: 100%;
 }
 .details-image {
-  width: 18vw;
+  width: 19vw;
+}
+.details-description {
+  font-size: 1.2 rem;
+  color: #fff;
 }
