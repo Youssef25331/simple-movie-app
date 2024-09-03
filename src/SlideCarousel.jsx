@@ -4,8 +4,9 @@ import { Container, Image } from "react-bootstrap";
 import FetchingComponent from "./FetchComponent";
 import CustomArrow from "./CustomArrow";
 import { AppTheme } from "./App";
+import { Link } from "react-router-dom";
 
-function SlideCarousel({ url, title }) {
+function SlideCarousel({ isMovie = true, url, title }) {
   const [theme, setTheme] = useContext(AppTheme);
   const responsive = {
     desktop: {
@@ -26,9 +27,10 @@ function SlideCarousel({ url, title }) {
   };
 
   const { isLoading, data } = FetchingComponent((url = url));
+
   return (
     <Container variant="dark" className="my-5" fluid>
-      <h2>{title}</h2>{" "}
+      <h2>{title}</h2>
       {!isLoading ? (
         <Carousel
           responsive={responsive}
@@ -43,7 +45,7 @@ function SlideCarousel({ url, title }) {
           swipeable={false}
         >
           {data.results.map((items) => (
-            <a href={items.original_title}>
+            <Link to={isMovie ? "movie/" + items.id : "tv/" + items.id}>
               <Image
                 className="px-1 carousel-image"
                 key={items.id}
@@ -51,7 +53,7 @@ function SlideCarousel({ url, title }) {
                 rounded
                 fluid
               ></Image>
-            </a>
+            </Link>
           ))}
         </Carousel>
       ) : (

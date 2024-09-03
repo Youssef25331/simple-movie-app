@@ -19,7 +19,7 @@ function App() {
       ),
     },
     {
-      path: "test",
+      path: "/:category/:id",
       element: <Details />,
     },
   ]);
