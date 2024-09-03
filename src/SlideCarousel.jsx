@@ -26,7 +26,6 @@ function SlideCarousel({ url, title }) {
   };
 
   const { isLoading, data } = FetchingComponent((url = url));
-  console.log(data);
   return (
     <Container variant="dark" className="my-5" fluid>
       <h2>{title}</h2>{" "}
