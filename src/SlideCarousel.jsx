@@ -45,7 +45,7 @@ function SlideCarousel({ isMovie = true, url, title }) {
           swipeable={false}
         >
           {data.results.map((items) => (
-            <Link to={isMovie ? "movie/" + items.id : "tv/" + items.id}>
+            <Link key={items.id} to={isMovie ? "movie/" + items.id : "tv/" + items.id}>
               <Image
                 className="px-1 carousel-image"
                 key={items.id}
