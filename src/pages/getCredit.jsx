@@ -6,6 +6,5 @@ export default function getCredit(isMovie, id) {
   const { isLoading, data } = FetchingComponent(isMovie ? moviesUrl : tvUrl);
   const creditLoading = isLoading;
   const credit = data;
-  console.log(isMovie)
   return { creditLoading, credit };
 }

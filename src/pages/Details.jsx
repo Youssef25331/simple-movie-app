@@ -45,7 +45,7 @@ export default function DetailsPage() {
           </div>
           <p className="details-description text-break">{data.overview}</p>
           <div className="d-flex flex-column cast-container">
-            <h3>Cast</h3>
+            {!creditLoading && credit.cast[0] ? <h3>Cast</h3> : ""}
             <div className="cast-member-container d-flex flex-wrap">
               {!creditLoading
                 ? credit.cast.slice(0, 15).map((actor) =>
