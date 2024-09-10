@@ -26,7 +26,6 @@ export default function DetailsPage() {
           "url(" + "https://image.tmdb.org/t/p/original/" + data.backdrop_path,
       }}
     >
-      {console.log(data)}
       <div className="position-relative d-flex details-hero-container">
         <Image
           className="details-image"

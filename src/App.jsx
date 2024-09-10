@@ -4,6 +4,7 @@ import { useState, createContext } from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import MyNavbar from "./MyNavbar";
 import Details from "./pages/Details";
+import Search from "./pages/Search";
 
 function App() {
   const [theme, setTheme] = useState("dark");
@@ -21,6 +22,10 @@ function App() {
     {
       path: "/:category/:id",
       element: <Details />,
+    },
+    {
+      path: "/search",
+      element: <Search />,
     },
   ]);
 
