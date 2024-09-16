@@ -3,21 +3,25 @@ import { Link } from "react-router-dom";
 
 export default function Card({ item }) {
   return (
-    <Link
-      key={item.id}
-      to={item.media_type == "Movie" ? "/movie/" + item.id : "/tv/" + item.id}
-    >
-      <Image
-        className=" card-image"
+    <div className="card-container">
+      <Link
         key={item.id}
-        src={
-          item.poster_path
-            ? "https://image.tmdb.org/t/p/w500" + item.poster_path
-            : console.log(item)
-        }
-        rounded
-        fluid
-      ></Image>
-    </Link>
+        className="d-flex"
+        to={item.media_type == "Movie" ? "/movie/" + item.id : "/tv/" + item.id}
+      >
+        <Image
+          className=" card-image"
+          key={item.id}
+          src={
+            item.poster_path
+              ? "https://image.tmdb.org/t/p/w500" + item.poster_path
+              : "https://www.colorhexa.com/35383f.png"
+          }
+          rounded
+          fluid
+        ></Image>
+      </Link>
+      <h3 className="card-title">{item.title || item.name}</h3>
+    </div>
   );
 }

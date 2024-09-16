@@ -5,16 +5,17 @@ import { useSearchParams } from "react-router-dom";
 
 function Search() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const keyWord = searchParams.get('keywords=')
-  const movie_url =
-    `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc`;
-  const tv_url =
-    "https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc";
+  const keyWord = searchParams.get("keywords");
+  const page = searchParams.get("p");
+
+  const movie_url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page ? page : "1"}&sort_by=popularity.desc${keyWord ? `&with_keywords=${keyWord}` : ""}`;
+  const tv_url = `https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=${page ? page : "1"}&sort_by=popularity.desc${keyWord ? `&with_keywords=${keyWord}` : ""}`;
   const { isLoading: isMovieLoading, data: movie_data } =
     FetchingComponent(movie_url);
-
   const { isLoading: isTvLoading, data: tv_data } = FetchingComponent(tv_url);
   const data = [];
+
+  let lastPage;
 
   !isMovieLoading
     ? movie_data.results.forEach((movie) => {
@@ -22,13 +23,15 @@ function Search() {
         data.push(movie);
       })
     : console.log("loading");
-  !isTvLoading
-    ? tv_data.results.forEach((tv) => {
-        tv.media_type = "TV";
-        data.push(tv);
-      })
-    : console.log("loading");
-  console.log(data);
+  if (!isTvLoading) {
+    tv_data.results.forEach((tv) => {
+      tv.media_type = "TV";
+      data.push(tv);
+    });
+
+  } else {
+    console.log("loading");
+  }
   return (
     <>
       <div className="m-auto search-container">
@@ -36,7 +39,7 @@ function Search() {
         {!isTvLoading ? (
           <div className="discover-container mt-5">
             {data.map((item) => (
-              <Card item={item} />
+              <Card key={item.id} item={item} />
             ))}
           </div>
         ) : (
