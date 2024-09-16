@@ -39,7 +39,7 @@ function Search() {
         {!isTvLoading ? (
           <div className="discover-container mt-5">
             {data.map((item) => (
-              <Card key={item.id} item={item} />
+              <Card key={item.id} item={item} title={true} />
             ))}
           </div>
         ) : (

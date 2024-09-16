@@ -1,7 +1,7 @@
 import { Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export default function Card({ item }) {
+export default function Card({ item, title }) {
   return (
     <div className="card-container">
       <Link
@@ -21,7 +21,7 @@ export default function Card({ item }) {
           fluid
         ></Image>
       </Link>
-      <h3 className="card-title">{item.title || item.name}</h3>
+      {title ? <h3 className="card-title">{item.title || item.name}</h3> : ""}
     </div>
   );
 }
