@@ -1,6 +1,7 @@
 $primary: #630963;
 $dark: #080108;
 $darker: #000;
+$white: #fffff0;
 @import "~bootstrap/scss/bootstrap";
 @import "react-multi-carousel/lib/styles.css";
 
@@ -108,8 +109,14 @@ h2 {
     height: 100%;
     width: 100%;
     background-color: #35383f;
+    aspect-ratio:2/3 ;
     /* @include media-breakpoint-up(lg) {
       width: 16vw;
     } */
   }
+}
+.card-title {
+  color: $white;
+  font-size: 1.2rem;
+  font-weight: 500;
 }

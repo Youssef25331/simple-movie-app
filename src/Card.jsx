@@ -21,7 +21,7 @@ export default function Card({ item, title }) {
           fluid
         ></Image>
       </Link>
-      {title ? <h3 className="card-title">{item.title || item.name}</h3> : ""}
+      {title ? <h3 className="m-2 text-center card-title">{item.title || item.name}</h3> : ""}
     </div>
   );
 }

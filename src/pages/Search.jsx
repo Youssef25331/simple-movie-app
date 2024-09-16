@@ -1,5 +1,5 @@
 import Card from "../Card";
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import FetchingComponent from "../FetchComponent";
 import { useSearchParams } from "react-router-dom";
 
@@ -28,14 +28,16 @@ function Search() {
       tv.media_type = "TV";
       data.push(tv);
     });
-
   } else {
     console.log("loading");
   }
   return (
     <>
       <div className="m-auto search-container">
-        <Form.Control type="search" className="" placeholder="search" />
+        <div className="d-flex mt-4 search-top-container">
+          <Button variant="dark">Filter</Button>
+          <Form.Control type="search" className="" placeholder="search" />
+        </div>
         {!isTvLoading ? (
           <div className="discover-container mt-5">
             {data.map((item) => (
