@@ -1,7 +1,19 @@
 import Card from "../Card";
-import { Button, Form } from "react-bootstrap";
+import {
+  Accordion,
+  AccordionBody,
+  AccordionHeader,
+  AccordionItem,
+  Button,
+  Form,
+  FormCheck,
+  Modal,
+  ModalBody,
+  ModalHeader,
+} from "react-bootstrap";
 import FetchingComponent from "../FetchComponent";
 import { useSearchParams } from "react-router-dom";
+import { useState } from "react";
 
 function Search() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -14,6 +26,12 @@ function Search() {
     FetchingComponent(movie_url);
   const { isLoading: isTvLoading, data: tv_data } = FetchingComponent(tv_url);
   const data = [];
+
+  const [show, setShow] = useState(true);
+  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
+
+  const genres = [{ name: "suck", id: 12 }];
 
   let lastPage;
 
@@ -29,13 +47,33 @@ function Search() {
       data.push(tv);
     });
   } else {
-    console.log("loading");
   }
+  console.log("loading");
   return (
     <>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Filers</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Accordion defaultActiveKey={null}>
+            <AccordionItem eventKey="0">
+              <AccordionHeader>Genre</AccordionHeader>
+              <AccordionBody>
+                <FormCheck></FormCheck>
+              </AccordionBody>
+            </AccordionItem>
+            <AccordionItem eventKey="1">
+              <AccordionHeader>Sort By</AccordionHeader>
+            </AccordionItem>
+          </Accordion>
+        </Modal.Body>
+      </Modal>
       <div className="m-auto search-container">
         <div className="d-flex mt-4 search-top-container">
-          <Button variant="dark">Filter</Button>
+          <Button onClick={handleShow} variant="dark">
+            Filter
+          </Button>
           <Form.Control type="search" className="" placeholder="search" />
         </div>
         {!isTvLoading ? (
