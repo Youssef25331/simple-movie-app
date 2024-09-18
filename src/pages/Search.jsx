@@ -31,9 +31,123 @@ function Search() {
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
-  const genres = [{ name: "suck", id: 12 }];
-
-  let lastPage;
+  const genres = [
+    {
+      id: 28,
+      name: "Action",
+    },
+    {
+      id: 12,
+      name: "Adventure",
+    },
+    {
+      id: 10759,
+      name: "Action & Adventure (TV)",
+    },
+    {
+      id: 16,
+      name: "Animation",
+    },
+    {
+      id: 35,
+      name: "Comedy",
+    },
+    {
+      id: 80,
+      name: "Crime",
+    },
+    {
+      id: 99,
+      name: "Documentary",
+    },
+    {
+      id: 18,
+      name: "Drama",
+    },
+    {
+      id: 10751,
+      name: "Family",
+    },
+    {
+      id: 10762,
+      name: "Kids (TV)",
+    },
+    {
+      id: 10764,
+      name: "Reality(tv)",
+    },
+    {
+      id: 14,
+      name: "Fantasy",
+    },
+    {
+      id: 36,
+      name: "History",
+    },
+    {
+      id: 27,
+      name: "Horror",
+    },
+    {
+      id: 10402,
+      name: "Music",
+    },
+    {
+      id: 9648,
+      name: "Mystery",
+    },
+    {
+      id: 10749,
+      name: "Romance",
+    },
+    {
+      id: 878,
+      name: "Science Fiction",
+    },
+    {
+      id: 10765,
+      name: "Sci-Fi & Fantasy (TV)",
+    },
+    {
+      id: 10770,
+      name: "TV Movie",
+    },
+    {
+      id: 53,
+      name: "Thriller",
+    },
+    {
+      id: 10752,
+      name: "War",
+    },
+    {
+      id: 10763,
+      name: "News (TV)",
+    },
+    {
+      id: 10766,
+      name: "Soap (TV)",
+    },
+    {
+      id: 10767,
+      name: "Talk (TV)",
+    },
+    {
+      id: 10768,
+      name: "War & Politics (TV)",
+    },
+    {
+      id: 37,
+      name: "Western",
+    },
+  ];
+  const sorts = [
+    { name: "Most Popular", value: "popularity.asc" },
+    { name: "Least Popular", value: "popularity.desc" },
+    { name: "First Airdate", value: "first_air_date.asc" },
+    { name: "Highest Average Vote", value: "vote_average.asc" },
+    { name: "Lowest Average Vote", value: "vote_average.desc" },
+  ];
 
   !isMovieLoading
     ? movie_data.results.forEach((movie) => {
@@ -60,11 +174,29 @@ function Search() {
             <AccordionItem eventKey="0">
               <AccordionHeader>Genre</AccordionHeader>
               <AccordionBody>
-                <FormCheck></FormCheck>
+                {genres.map((genre) => (
+                  <FormCheck
+                    key={genre.id}
+                    type="checkbox"
+                    label={genre.name}
+                  />
+                ))}
               </AccordionBody>
             </AccordionItem>
             <AccordionItem eventKey="1">
               <AccordionHeader>Sort By</AccordionHeader>
+              <AccordionBody>
+                <Form>
+                  {sorts.map((sort, index) => (
+                    <FormCheck
+                      name={"Sorts"}
+                      key={sort.index}
+                      type="radio"
+                      label={sort.name}
+                    />
+                  ))}
+                </Form>
+              </AccordionBody>
             </AccordionItem>
           </Accordion>
         </Modal.Body>
