@@ -22,8 +22,8 @@ function MyNavbar() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link>Movies</Nav.Link>
-            <Nav.Link>TV Shows</Nav.Link>
+            <Nav.Link href="/search/movies">Movies</Nav.Link>
+            <Nav.Link href="/search/tv">TV Shows</Nav.Link>
           </Nav>
           <Form className="d-flex align-items-center">
             <FontAwesomeIcon

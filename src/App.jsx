@@ -24,7 +24,7 @@ function App() {
       element: <Details />,
     },
     {
-      path: "/search",
+      path: "/search/:type",
       element: <Search />,
     },
   ]);

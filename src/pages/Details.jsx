@@ -7,7 +7,6 @@ import { useParams } from "react-router-dom";
 
 export default function DetailsPage() {
   const params = useParams();
-
   const { isLoading, data } = FetchingComponent(
     `https://api.themoviedb.org/3/${params.category}/${params.id}?language=en-US`,
   );
