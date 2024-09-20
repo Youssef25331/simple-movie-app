@@ -1,13 +1,13 @@
 import { Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export default function Card({ item, title }) {
+export default function Card({ item, title, type }) {
   return (
     <div className="card-container">
       <Link
         key={item.id}
         className="d-flex"
-        to={item.media_type == "Movie" ? "/movie/" + item.id : "/tv/" + item.id}
+        to={type == "movies" ? "/movie/" + item.id : "/tv/" + item.id}
       >
         <Image
           className=" card-image"
@@ -21,7 +21,13 @@ export default function Card({ item, title }) {
           fluid
         ></Image>
       </Link>
-      {title ? <h3 className="m-2 text-center card-title">{item.title || item.name}</h3> : ""}
+      {title ? (
+        <h3 className="m-2 text-center card-title">
+          {item.title || item.name}
+        </h3>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
