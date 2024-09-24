@@ -29,7 +29,7 @@ export default function MyPagination({ page, lastPage, handlePage }) {
     };
 
     if (num <= 5) {
-      makePagination(num);
+      makePagination(lastPage);
     } else {
       const lastPages = [lastPage - 2, lastPage - 1, lastPage];
 
