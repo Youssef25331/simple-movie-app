@@ -8,7 +8,6 @@ import {
   Form,
   FormCheck,
   Modal,
-  Pagination,
 } from "react-bootstrap";
 import FetchingComponent from "../FetchComponent";
 import {
@@ -288,7 +287,7 @@ function Search() {
         )}
       </div>
       <div className="position-absolute translate-middle-x mt-4 start-50 pagination-container">
-        {lastPage ? <MyPagination page={page} handlePage={handlePage} /> : ""}
+        {lastPage ? <MyPagination page={page} lastPage={lastPage} handlePage={handlePage} /> : ""}
       </div>
     </>
   );
