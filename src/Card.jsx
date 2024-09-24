@@ -1,4 +1,3 @@
-import { Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function Card({ item, title, type }) {
@@ -21,7 +20,9 @@ export default function Card({ item, title, type }) {
           }}
           rounded
           fluid
-        ></div>
+        >
+          <div className="card-overlay"></div>
+        </div>
       </Link>
       {title ? (
         <h3 className="m-2 text-center card-title">

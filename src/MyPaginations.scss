@@ -1,0 +1,27 @@
+@import "./App.scss";
+
+.pagination {
+  box-shadow: 0px -1px 20px 1px rgb(53 53 53 / 25%);
+}
+.page-item.active {
+  .page-link {
+    background-color: $primary;
+  }
+}
+
+.pagination .page-link {
+  transition: 0.4s;
+  color: $white;
+  border-radius: 0;
+  background-color: $darker;
+  border: none ;
+  &:hover {
+    background-color: $primary;
+  }
+  input{
+    background-color:$dark;
+    color:$white;
+    border:none;
+    border-radius:2px
+  }
+}

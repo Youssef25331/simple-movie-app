@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Pagination } from "react-bootstrap";
+import "./MyPaginations.scss";
 
 export default function MyPagination({ page, lastPage, handlePage }) {
   const [inputMode, setInputMode] = useState(false);
@@ -99,7 +100,7 @@ export default function MyPagination({ page, lastPage, handlePage }) {
   }
 
   return lastPage < 5 ? (
-    <Pagination>
+    <Pagination className="pagination-container">
       <Pagination.First onClick={() => handlePage(1)} />
       <Pagination.Prev onClick={() => handlePage(parseInt(page) - 1)} />
       {generatePagination(5)}
