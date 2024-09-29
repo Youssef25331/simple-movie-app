@@ -67,6 +67,7 @@
 
   .cast-member-name {
 
+    width: 8vw;
     @include media-breakpoint-down(md) {
       width: 16vw;
     }

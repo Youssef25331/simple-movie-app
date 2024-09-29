@@ -30,7 +30,6 @@ export default function DetailsPage() {
           className="details-image"
           src={"https://image.tmdb.org/t/p/w500" + data.poster_path}
           rounded
-          fluid
         />
         <div className="ms-4 details-description-container">
           <h2 className="details-title">

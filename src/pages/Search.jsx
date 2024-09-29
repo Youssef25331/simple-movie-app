@@ -27,6 +27,7 @@ function Search() {
   const currentSort = "popularity.desc";
   const type = params.type.toLowerCase();
 
+  const query = searchParams.get("query");
   const keyWord = searchParams.get("keywords") || "";
   const activeGenres = searchParams.getAll("Genres") || [];
   const activeSort = searchParams.get("Sorts") || currentSort;
@@ -36,6 +37,14 @@ function Search() {
     searchParams.set("p", num);
     setSearchParams(searchParams);
     window.location.reload();
+  };
+
+  const handleSearch = (value) => {
+    setSearchParams({});
+    searchParams.set("query", value);
+    setSearchParams(searchParams);
+    window.location.reload();
+
   };
 
   const movieGenres = useMemo(
@@ -200,12 +209,18 @@ function Search() {
     [],
   );
 
-  const apiUrl =
-    type === "movies"
-      ? `https://api.themoviedb.org/3/discover/movie?include_adult=false&language=en-US&page=${page}&sort_by=${activeSort}${keyWord ? `&with_keywords=${keyWord}` : ""}${activeGenres.length > 0 ? `&with_genres=${activeGenres.join()}` : ""}`
-      : `https://api.themoviedb.org/3/discover/tv?include_adult=false&language=en-US&page=${page}&sort_by=${activeSort}${keyWord ? `&with_keywords=${keyWord}` : ""}${activeGenres.length > 0 ? `&with_genres=${activeGenres.join()}` : ""}`;
+  const apiUrl = () => {
+    if (!query) {
+      return type === "movies"
+        ? `https://api.themoviedb.org/3/discover/movie?include_adult=false&language=en-US&page=${page}&sort_by=${activeSort}${keyWord ? `&with_keywords=${keyWord}` : ""}${activeGenres.length > 0 ? `&with_genres=${activeGenres.join()}` : ""}`
+        : `https://api.themoviedb.org/3/discover/tv?include_adult=false&language=en-US&page=${page}&sort_by=${activeSort}${keyWord ? `&with_keywords=${keyWord}` : ""}${activeGenres.length > 0 ? `&with_genres=${activeGenres.join()}` : ""}`;
+    }
+    return type === "movies"
+      ? `https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=${page}`
+      : `https://api.themoviedb.org/3/search/tv?query=${query}&include_adult=false&language=en-US&page=${page}`;
+  };
 
-  const { isLoading, data } = FetchingComponent(apiUrl);
+  const { isLoading, data } = FetchingComponent(apiUrl());
   const lastPage = isLoading
     ? 0
     : data.total_pages > 500
@@ -274,7 +289,13 @@ function Search() {
           <Button onClick={handleShow} variant="dark">
             Filter
           </Button>
-          <Form.Control type="search" placeholder="Search" />
+          <Form.Control
+            type="search"
+            onKeyDown={(e) =>
+              e.code === "Enter" ? handleSearch(e.target.value) : ""
+            }
+            placeholder="Click here to serach for..."
+          />
         </div>
         {!isLoading ? (
           <div className="discover-container mt-5">
@@ -287,7 +308,15 @@ function Search() {
         )}
       </div>
       <div className="position-absolute translate-middle-x mt-4 start-50 pagination-container">
-        {lastPage ? <MyPagination page={page} lastPage={lastPage} handlePage={handlePage} /> : ""}
+        {lastPage ? (
+          <MyPagination
+            page={page}
+            lastPage={lastPage}
+            handlePage={handlePage}
+          />
+        ) : (
+          ""
+        )}
       </div>
     </>
   );
