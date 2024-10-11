@@ -1,11 +1,11 @@
 import { Collapse, Form, Container, Nav, Navbar } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { AppTheme } from "./App";
 
 function MyNavbar() {
-  const [theme, setTheme] = useContext(AppTheme);
+  const [theme] = useContext(AppTheme);
   const [searchOpen, setSearchOpen] = useState(false);
   const [value, setValue] = useState();
 
@@ -13,7 +13,7 @@ function MyNavbar() {
     <Navbar sticky="top" expand="sm" bg={theme} variant={theme}>
       <Container>
         <Navbar.Brand href="/" className="my-2">
-          MovieDB
+          <img src={'https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixlr.com%2Fimage-generator%2F&psig=AOvVaw0J6BahZOPil0LvixBTkZ58&ust=1728752589061000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIjAhrHnhokDFQAAAAAdAAAAABAI'} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="toggle-navbar" />
         <Navbar.Collapse id="toggle-navbar">
@@ -25,27 +25,13 @@ function MyNavbar() {
             <Nav.Link href="/search/movies">Movies</Nav.Link>
             <Nav.Link href="/search/tv">TV Shows</Nav.Link>
           </Nav>
-          <Form className="d-flex align-items-center">
+          <a href="/search/movies">
             <FontAwesomeIcon
               size="lg"
               /* visibility={searchOpen?"hidden":''} */ icon={faSearch}
               className="fa-icon p-1"
-              onClick={() => {
-                setSearchOpen(!searchOpen);
-              }}
             />
-            <Collapse in={searchOpen} timeout={10000} dimension={"width"}>
-              <div className="searchWrapper">
-                {/* Fix choppy opening animation */}
-                <Form.Control
-                  type="search"
-                  className="mx-2"
-                  placeholder="search"
-                  onChange={(e) => setValue(e.target.value)}
-                />
-              </div>
-            </Collapse>
-          </Form>
+          </a>
         </Navbar.Collapse>
       </Container>
     </Navbar>

@@ -1,27 +1,45 @@
 import { useEffect, useState } from "react";
 import SlideCarousel from "./SlideCarousel";
-import { Image } from "react-bootstrap";
+import { Button, Image } from "react-bootstrap";
 import FetchingComponent from "./FetchComponent";
+import Card from "./Card";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   const { isLoading, data } = FetchingComponent();
-
+  const randomItem = !isLoading
+    ? data.results[Math.floor(Math.random() * data.results.length)]
+    : "";
   return (
     <div>
-      <div className="main-image-container overlay">
+      <div className="hero-container overlay">
         {isLoading ? (
           <h1>Loading</h1>
         ) : (
-          <div className="stuff">
+          <div className="hero">
             <Image
-              className="bg-primary bg-gradient main-image"
+              className="bg-primary bg-gradient main-image w-100"
               fluid
               src={
-                "https://image.tmdb.org/t/p/original" +
-                data.results[Math.floor(Math.random() * data.results.length)]
-                  .backdrop_path
+                "https://image.tmdb.org/t/p/original" + randomItem.backdrop_path
               }
             />
+
+            <div className="hero-details-container position-absolute flex-column d-flex">
+              <h1
+                className="hero-name"
+                src={"https://image.tmdb.org/t/p/w500" + randomItem.poster_path}
+              >
+                {randomItem.title}
+              </h1>
+
+              <p className="text-break hero-details">{randomItem.overview}</p>
+              <Link to={"/movie/"+randomItem.id}>
+                <Button variant="dark" className="hero-button">
+                  details
+                </Button>
+              </Link>
+            </div>
           </div>
         )}
       </div>

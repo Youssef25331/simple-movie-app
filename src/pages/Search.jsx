@@ -44,7 +44,6 @@ function Search() {
     searchParams.set("query", value);
     setSearchParams(searchParams);
     window.location.reload();
-
   };
 
   const movieGenres = useMemo(
@@ -244,6 +243,7 @@ function Search() {
                   {type == "movies"
                     ? movieGenres.map((genre) => (
                         <FormCheck
+                          inline
                           name="Genres"
                           key={genre.id}
                           type="checkbox"
@@ -286,11 +286,16 @@ function Search() {
 
       <div className="m-auto search-container">
         <div className="d-flex mt-4 search-top-container">
-          <Button onClick={handleShow} variant="dark">
-            Filter
-          </Button>
+          <Form.Control
+            type="button"
+            value={"Filters"}
+            className="w-25 me-2 filter-button"
+            onClick={handleShow}
+            variant="dark"
+          ></Form.Control>
           <Form.Control
             type="search"
+            className="search-bar"
             onKeyDown={(e) =>
               e.code === "Enter" ? handleSearch(e.target.value) : ""
             }
@@ -298,7 +303,7 @@ function Search() {
           />
         </div>
         {!isLoading ? (
-          <div className="discover-container mt-5">
+          <div className="discover-container  mt-3">
             {data.results.map((item) => (
               <Card type={type} key={item.id} item={item} title={true} />
             ))}

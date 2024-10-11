@@ -3,6 +3,7 @@ $lighter: #353c40;
 $dark: #0e1011;
 $darker: #000;
 $white: #fffff0;
+$offwhite: #787878;
 $card-trainsion: 0.5s;
 
 @import "~bootstrap/scss/bootstrap";
@@ -13,6 +14,7 @@ $card-trainsion: 0.5s;
   transition: 0.3s;
   &:hover {
     color: #c1bfc1;
+    cursor: pointer;
   }
 }
 .wide {
@@ -98,11 +100,83 @@ h2 {
     opacity: 1;
   }
 }
+.hero-details-container {
+  width: 50%;
+  top: 8%;
+  left: 4vw;
+  * {
+    display: none;
+  }
+
+  @include media-breakpoint-up(sm) {
+    * {
+      display: block;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    top: 20%;
+  }
+}
+.hero-name {
+  font-family: bebasregular, Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 8px $dark;
+  color: $white;
+  font-size: 1.7rem;
+  @include media-breakpoint-up(md) {
+    font-size: 2.5rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 4rem;
+  }
+}
+.hero-details {
+  color: $white;
+  font-weight: 300;
+  @include media-breakpoint-up(sm) {
+    display: block;
+
+    font-size: 10px;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 12px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width:40vw;
+    font-size: 14px;
+  }
+}
+a {
+  text-decoration: none !important;
+  .hero-button {
+    box-shadow: 2px 2px 8px $darker;
+    width: 100px;
+    @include media-breakpoint-up(md) {
+      width: 200px;
+    }
+  }
+}
 .carousels-container {
   margin-top: -20%;
 }
 .search-container {
   max-width: 1390px;
+}
+.search-bar,
+.filter-button {
+  height: 48px;
+  background-color: $darker;
+  color: $white;
+  &::placeholder {
+    color: $offwhite;
+  }
+  &:focus {
+    background-color: $darker;
+    color: $white;
+  }
 }
 .discover-container {
   display: grid;
