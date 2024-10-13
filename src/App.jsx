@@ -19,7 +19,6 @@ function Layout() {
 
 function App() {
   const [theme, setTheme] = useState("dark");
-  const [transparent, setTransparent] = useState(false);
   
   const router = createBrowserRouter([
     {
@@ -53,7 +52,7 @@ function App() {
 
   return (
     <div className="app">
-      <AppTheme.Provider value={[theme, setTheme, transparent, setTransparent]}>
+      <AppTheme.Provider value={[theme, setTheme]}>
         <RouterProvider router={router} />
       </AppTheme.Provider>
     </div>

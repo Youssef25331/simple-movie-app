@@ -23,12 +23,14 @@
   padding-top: 26vh;
   color: #fff;
 
-  @include media-breakpoint-down(md) {
-    padding-left: 0;
-  }
-
   .top-details-container {
     padding-left: 16vw;
+  }
+
+  @include media-breakpoint-down(md) {
+    .top-details-container {
+      padding-left: 0;
+    }
   }
 }
 

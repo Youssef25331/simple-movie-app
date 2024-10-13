@@ -9,9 +9,6 @@ import { useParams } from "react-router-dom";
 export default function DetailsPage() {
   const params = useParams();
   const [theme, setTheme, transparent, setTransparent] = useContext(AppTheme);
-  useEffect(() => {
-    setTransparent(true)
-  }, [])
   const { isLoading, data } = FetchingComponent(
     `https://api.themoviedb.org/3/${params.category}/${params.id}?language=en-US`,
   );
@@ -51,7 +48,7 @@ export default function DetailsPage() {
         </div>
         <div className="d-flex flex-column  cast-container">
           {!creditLoading && credit.cast[0] ? <h3>Cast</h3> : ""}
-          <div className="cast-member-container   d-flex flex-wrap">
+          <div className="cast-member-container ms-3  d-flex flex-wrap">
             {!creditLoading
               ? credit.cast.slice(0, 15).map((actor) =>
                 actor.profile_path ? (
@@ -59,15 +56,17 @@ export default function DetailsPage() {
                     key={actor.credit_id}
                     className="cast-member align-items-center me-2 d-flex flex-column"
                   >
-                    <Image
-                      src={
-                        "https://image.tmdb.org/t/p/w200" +
-                        actor.profile_path
-                      }
-                    />
-                    <p className="text-center cast-member-name">
-                      {actor.name}
-                    </p>
+                    <a href={"https://www.imdb.com/find/?q=" + actor.name}>
+                      <Image
+                        src={
+                          "https://image.tmdb.org/t/p/w200" +
+                          actor.profile_path
+                        }
+                      />
+                      <p className="text-center cast-member-name">
+                        {actor.name}
+                      </p>
+                    </a>
                   </div>
                 ) : (
                   ""
