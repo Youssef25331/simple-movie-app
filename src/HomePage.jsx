@@ -12,6 +12,7 @@ function HomePage() {
     : "";
   return (
     <div>
+
       <div className="hero-container overlay">
         {isLoading ? (
           <h1>Loading</h1>
