@@ -43,22 +43,17 @@ function MyNavbar() {
           !transparent ?
             <>
               <Navbar.Brand href="/" className="my-2">
-                <img src={require('./favicon.png')} width={"64px"} />
+                <img className="site-icon" src={require('./favicon.png')} width={"64px"} />
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="toggle-navbar" />
-              <Navbar.Collapse id="toggle-navbar">
-                <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Item>
-                    <Nav.Link href="/">Home</Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link href="/search/movies">Movies</Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link href="/search/tv">TV Shows</Nav.Link>
-                  </Nav.Item>
+              <Navbar.Collapse id="toggle-navbar" >
+                <Nav className="justify-content-center nav-links flex-grow-1 pe-3">
+                  <Nav.Link href="/search/movies" >Movies</Nav.Link>
+                  <Nav.Link href="/search/tv">TV Shows</Nav.Link>
+
                 </Nav>
               </Navbar.Collapse>
+
             </>
             :
             <>

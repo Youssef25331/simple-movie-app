@@ -17,6 +17,21 @@ $card-trainsion: 0.5s;
 
 }
 
+.site-icon {
+  width: 96px;
+}
+
+.nav-links {
+  &>* {
+    font-size: 18px;
+    color: white;
+
+    &:hover {
+      color: var(--bs-navbar-hover-color);
+    }
+  }
+}
+
 .fa-icon {
   color: white;
   transition: 0.3s;
