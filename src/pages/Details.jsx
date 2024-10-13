@@ -1,5 +1,6 @@
 import "./details.scss";
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { AppTheme } from "../App";
 import { Image } from "react-bootstrap";
 import FetchingComponent from "../FetchComponent";
 import getCredit from "./getCredit";
@@ -7,6 +8,10 @@ import { useParams } from "react-router-dom";
 
 export default function DetailsPage() {
   const params = useParams();
+  const [theme, setTheme, transparent, setTransparent] = useContext(AppTheme);
+  useEffect(() => {
+    setTransparent(true)
+  }, [])
   const { isLoading, data } = FetchingComponent(
     `https://api.themoviedb.org/3/${params.category}/${params.id}?language=en-US`,
   );
@@ -46,25 +51,25 @@ export default function DetailsPage() {
             <div className="cast-member-container d-flex flex-wrap">
               {!creditLoading
                 ? credit.cast.slice(0, 15).map((actor) =>
-                    actor.profile_path ? (
-                      <div
-                        key={actor.credit_id}
-                        className="cast-member align-items-center me-2 d-flex flex-column"
-                      >
-                        <Image
-                          src={
-                            "https://image.tmdb.org/t/p/w200" +
-                            actor.profile_path
-                          }
-                        />
-                        <p className="text-center cast-member-name">
-                          {actor.name}
-                        </p>
-                      </div>
-                    ) : (
-                      ""
-                    ),
-                  )
+                  actor.profile_path ? (
+                    <div
+                      key={actor.credit_id}
+                      className="cast-member align-items-center me-2 d-flex flex-column"
+                    >
+                      <Image
+                        src={
+                          "https://image.tmdb.org/t/p/w200" +
+                          actor.profile_path
+                        }
+                      />
+                      <p className="text-center cast-member-name">
+                        {actor.name}
+                      </p>
+                    </div>
+                  ) : (
+                    ""
+                  ),
+                )
                 : "Cast Loading"}
             </div>
           </div>

@@ -1,6 +1,6 @@
 import "./App.scss";
 import HomePage from "./HomePage";
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import MyNavbar from "./MyNavbar";
 import Details from "./pages/Details";
@@ -8,6 +8,7 @@ import Search from "./pages/Search";
 
 function App() {
   const [theme, setTheme] = useState("dark");
+  const [transparent, setTransparent] = useState(false)
   const router = createBrowserRouter([
     {
       path: "/",
@@ -31,7 +32,7 @@ function App() {
 
   return (
     <div className="app">
-      <AppTheme.Provider value={[theme, setTheme]}>
+      <AppTheme.Provider value={[theme, setTheme, transparent, setTransparent]}>
         <MyNavbar />
         <RouterProvider router={router} />
       </AppTheme.Provider>

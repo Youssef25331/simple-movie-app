@@ -242,24 +242,24 @@ function Search() {
                 <AccordionBody>
                   {type == "movies"
                     ? movieGenres.map((genre) => (
-                        <FormCheck
-                          inline
-                          name="Genres"
-                          key={genre.id}
-                          type="checkbox"
-                          value={genre.id}
-                          label={genre.name}
-                        />
-                      ))
+                      <FormCheck
+                        inline
+                        name="Genres"
+                        key={genre.id}
+                        type="checkbox"
+                        value={genre.id}
+                        label={genre.name}
+                      />
+                    ))
                     : tvGenres.map((genre) => (
-                        <FormCheck
-                          name="Genres"
-                          key={genre.id}
-                          type="checkbox"
-                          value={genre.id}
-                          label={genre.name}
-                        />
-                      ))}
+                      <FormCheck
+                        name="Genres"
+                        key={genre.id}
+                        type="checkbox"
+                        value={genre.id}
+                        label={genre.name}
+                      />
+                    ))}
                 </AccordionBody>
               </AccordionItem>
               <AccordionItem eventKey="1">
