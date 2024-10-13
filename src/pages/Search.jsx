@@ -253,6 +253,7 @@ function Search() {
                     ))
                     : tvGenres.map((genre) => (
                       <FormCheck
+                        inline
                         name="Genres"
                         key={genre.id}
                         type="checkbox"

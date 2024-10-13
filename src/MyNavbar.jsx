@@ -67,7 +67,7 @@ function MyNavbar() {
             </>
             :
             <>
-              <a href="#" >
+              <a href="javascript:window.history.back()" >
                 <FontAwesomeIcon
                   size="2x"
                   icon={faArrowLeft}
