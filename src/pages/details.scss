@@ -7,6 +7,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(https://image.tmdb.org/t/p/original/3u5b6Zy3EKQX0ALvg1uBC7wd1Jw.jpg);
+
   &::before {
     content: "";
     position: absolute;
@@ -17,17 +18,24 @@
     background-image: linear-gradient(to top, black, rgba(black, 0));
   }
 }
+
 .details-hero-container {
   padding-top: 26vh;
-  padding-left: 16vw;
   color: #fff;
+
   @include media-breakpoint-down(md) {
     padding-left: 0;
   }
+
+  .top-details-container {
+    padding-left: 16vw;
+  }
 }
+
 .details-title {
   font-size: 4rem;
   font-weight: 200;
+
   @include media-breakpoint-down(lg) {
     font-size: 2rem;
   }
@@ -41,21 +49,25 @@
     width: 40vw;
   }
 }
+
 .genre {
   margin: 2vh 0;
   gap: 8px;
-  & > * {
+
+  &>* {
     padding: 0.5rem 1.5rem;
     color: white;
     border: 2px solid white;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
+
     @include media-breakpoint-down(lg) {
       padding: 0.2rem 0.6rem;
     }
   }
 }
+
 .cast-container {
   img {
     width: 8vw;
@@ -66,8 +78,8 @@
   }
 
   .cast-member-name {
-
     width: 8vw;
+
     @include media-breakpoint-down(md) {
       width: 16vw;
     }

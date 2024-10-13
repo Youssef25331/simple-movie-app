@@ -31,7 +31,7 @@ export default function DetailsPage() {
       }}
     >
       <div className="position-relative  flex-column  d-flex details-hero-container">
-        <div className="d-flex">
+        <div className="d-flex top-details-container">
           <Image
             className="details-image"
             src={"https://image.tmdb.org/t/p/w500" + data.poster_path}
@@ -49,9 +49,9 @@ export default function DetailsPage() {
             <p className="details-description text-break">{data.overview}</p>
           </div>
         </div>
-        <div className="d-flex flex-column cast-container">
+        <div className="d-flex flex-column  cast-container">
           {!creditLoading && credit.cast[0] ? <h3>Cast</h3> : ""}
-          <div className="cast-member-container d-flex flex-wrap">
+          <div className="cast-member-container   d-flex flex-wrap">
             {!creditLoading
               ? credit.cast.slice(0, 15).map((actor) =>
                 actor.profile_path ? (
