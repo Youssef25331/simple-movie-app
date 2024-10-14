@@ -31,7 +31,6 @@ function SlideCarousel({ isMovie = true, url, title }) {
   return (
     <Container variant="dark" className="my-5" fluid>
       <h2>{title}</h2>
-      {!isLoading ? (
         <Carousel
           responsive={responsive}
           customLeftArrow={<CustomArrow />}
@@ -49,16 +48,13 @@ function SlideCarousel({ isMovie = true, url, title }) {
               <Image
                 className="px-1 carousel-image"
                 key={items.id}
-                src={"https://image.tmdb.org/t/p/w500" + items.poster_path}
+                src={!isLoading?"https://image.tmdb.org/t/p/w500" + items.poster_path :items.poster_path}
                 rounded
                 fluid
               ></Image>
             </Link>
           ))}
         </Carousel>
-      ) : (
-        <>loading</>
-      )}
     </Container>
   );
 }
