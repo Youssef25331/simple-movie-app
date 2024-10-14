@@ -6,7 +6,141 @@ export default function FetchingComponent(
   options = {},
 ) {
   const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState();
+  const [data, setData] = useState(
+    {
+      results: [
+        {
+          "backdrop_path": require("./CardImage.png"),
+          "title": "Loading",
+          "original_title": "Loading",
+          "poster_path": require("./CardImage.png"),
+        },
+        {
+          "backdrop_path": require("./CardImage.png"),
+          "title": "Loading",
+          "original_title": "Loading",
+          "poster_path": require("./CardImage.png"),
+        },
+        {
+          "backdrop_path": require("./CardImage.png"),
+          "title": "Loading",
+          "original_title": "Loading",
+          "poster_path": require("./CardImage.png"),
+        },
+        {
+          "backdrop_path": require("./CardImage.png"),
+          "title": "Loading",
+          "original_title": "Loading",
+          "poster_path": require("./CardImage.png"),
+        },
+        {
+          "backdrop_path": require("./CardImage.png"),
+          "title": "Loading",
+          "original_title": "Loading",
+          "poster_path": require("./CardImage.png"),
+        },
+        {
+          "backdrop_path": require("./CardImage.png"),
+          "title": "Loading",
+          "original_title": "Loading",
+          "poster_path": require("./CardImage.png"),
+        },
+        {
+          "backdrop_path": require("./CardImage.png"),
+          "title": "Loading",
+          "original_title": "Loading",
+          "poster_path": require("./CardImage.png"),
+        },
+        {
+          "backdrop_path": require("./CardImage.png"),
+          "title": "Loading",
+          "original_title": "Loading",
+          "poster_path": require("./CardImage.png"),
+        },
+        {
+          "backdrop_path": require("./CardImage.png"),
+          "title": "Loading",
+          "original_title": "Loading",
+          "poster_path": require("./CardImage.png"),
+        },
+        {
+          "backdrop_path": require("./CardImage.png"),
+          "title": "Loading",
+          "original_title": "Loading",
+          "poster_path": require("./CardImage.png"),
+        },
+        {
+          "backdrop_path": require("./CardImage.png"),
+          "title": "Loading",
+          "original_title": "Loading",
+          "poster_path": require("./CardImage.png"),
+        },
+        {
+          "backdrop_path": require("./CardImage.png"),
+          "title": "Loading",
+          "original_title": "Loading",
+          "poster_path": require("./CardImage.png"),
+        },
+        {
+          "backdrop_path": require("./CardImage.png"),
+          "title": "Loading",
+          "original_title": "Loading",
+          "poster_path": require("./CardImage.png"),
+        },
+        {
+          "backdrop_path": require("./CardImage.png"),
+          "title": "Loading",
+          "original_title": "Loading",
+          "poster_path": require("./CardImage.png"),
+        },
+        {
+          "backdrop_path": require("./CardImage.png"),
+          "title": "Loading",
+          "original_title": "Loading",
+          "poster_path": require("./CardImage.png"),
+        },
+        {
+          "backdrop_path": require("./CardImage.png"),
+          "title": "Loading",
+          "original_title": "Loading",
+          "poster_path": require("./CardImage.png"),
+        },
+        {
+          "backdrop_path": require("./CardImage.png"),
+          "title": "Loading",
+          "original_title": "Loading",
+          "poster_path": require("./CardImage.png"),
+        },
+        {
+          "backdrop_path": require("./CardImage.png"),
+          "title": "Loading",
+          "original_title": "Loading",
+          "poster_path": require("./CardImage.png"),
+        },
+        {
+          "backdrop_path": require("./CardImage.png"),
+          "title": "Loading",
+          "original_title": "Loading",
+          "poster_path": require("./CardImage.png"),
+        },
+        {
+          "backdrop_path": require("./CardImage.png"),
+          "title": "Loading",
+          "original_title": "Loading",
+          "poster_path": require("./CardImage.png"),
+        },
+        {
+          "backdrop_path": require("./CardImage.png"),
+          "title": "Loading",
+          "original_title": "Loading",
+          "poster_path": require("./CardImage.png"),
+        },
+
+      ]
+    }
+  );
+  console.log(data)
+
   const defaultOptions = {
     method: "GET",
     headers: {
@@ -17,7 +151,9 @@ export default function FetchingComponent(
   };
   const overideOptions = { ...defaultOptions, ...options };
   useEffect(() => {
+
     const fetchData = async () => {
+
       try {
         const response = await fetch(url, overideOptions);
         if (!response.ok) {
@@ -25,7 +161,6 @@ export default function FetchingComponent(
           console.log(error);
         }
         const data = await response.json();
-        setData(data);
         setIsLoading(false);
       } catch (e) {
         console.error("Failed to call API: ", e);
