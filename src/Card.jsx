@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
-export default function Card({ item, title, type }) {
+export default function Card({ item, title, type ,isLoading}) {
   return (
     <div className="card-container">
       <Link
         key={item.id}
         className="d-flex"
-        to={type == "movies" ? "/movie/" + item.id : "/tv/" + item.id}
+        to={!isLoading?type == "movies" ? "/movie/" + item.id : "/tv/" + item.id:""}
       >
         <div
           className="card-image"

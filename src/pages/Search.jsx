@@ -221,7 +221,7 @@ function Search() {
 
   const { isLoading, data } = FetchingComponent(apiUrl());
   const lastPage = isLoading
-    ? 0
+    ? 1
     : data.total_pages > 500
       ? 500
       : data.total_pages;
@@ -303,15 +303,11 @@ function Search() {
             placeholder="Click here to serach for..."
           />
         </div>
-        {!isLoading ? (
           <div className="discover-container  mt-3">
             {data.results.map((item) => (
-              <Card type={type} key={item.id} item={item} title={true} />
+              <Card type={type} key={item.id} item={item} title={true} isLoading={isLoading}/>
             ))}
           </div>
-        ) : (
-          <div>Loading...</div>
-        )}
       </div>
       <div className="position-absolute translate-middle-x mt-4 start-50 pagination-container">
         {lastPage ? (
