@@ -50,7 +50,6 @@ function MyNavbar() {
                 <Nav className="justify-content-center nav-links flex-grow-1 pe-3">
                   <Nav.Link href="/search/movies" >Movies</Nav.Link>
                   <Nav.Link href="/search/tv">TV Shows</Nav.Link>
-
                 </Nav>
               </Navbar.Collapse>
 

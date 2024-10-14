@@ -139,8 +139,6 @@ export default function FetchingComponent(
       ]
     }
   );
-  console.log(data)
-
   const defaultOptions = {
     method: "GET",
     headers: {
@@ -161,6 +159,7 @@ export default function FetchingComponent(
           console.log(error);
         }
         const data = await response.json();
+        setData(data)
         setIsLoading(false);
       } catch (e) {
         console.error("Failed to call API: ", e);

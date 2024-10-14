@@ -17,31 +17,33 @@ export default function DetailsPage() {
     params.category == "movie",
     params.id,
   );
-  return isLoading ? (
-    "loading"
-  ) : (
+  return (
     <div
       className="details-background"
-      style={{
-        backgroundImage:
-          "url(" + "https://image.tmdb.org/t/p/original/" + data.backdrop_path,
-      }}
+      style={!isLoading ?
+        {
+          backgroundImage:
+            "url(" + "https://image.tmdb.org/t/p/original/" + data.backdrop_path,
+        } : null
+      }
     >
       <div className="position-relative  flex-column  d-flex details-hero-container">
         <div className="d-flex top-details-container">
           <Image
             className="details-image"
-            src={"https://image.tmdb.org/t/p/w500" + data.poster_path}
+            src={!isLoading ? "https://image.tmdb.org/t/p/w500" + data.poster_path : require("../CardImage.png")}
             rounded
           />
           <div className="ms-4 details-description-container">
             <h2 className="details-title">
-              {data.title || data.name || data.original_name}
+              {data.title || data.name || data.original_name ||"Loading"}
             </h2>
             <div className="d-flex flex-wrap genre">
-              {data.genres.map((genre) => (
-                <span key={genre.id}>{genre.name}</span>
-              ))}
+              {!isLoading ?
+                data.genres.map((genre) => (
+                  <span key={genre.id}>{genre.name}</span>
+                )) : ""
+              }
             </div>
             <p className="details-description text-break">{data.overview}</p>
           </div>
@@ -72,7 +74,7 @@ export default function DetailsPage() {
                   ""
                 ),
               )
-              : "Cast Loading"}
+              : null}
           </div>
         </div>
       </div>

@@ -17,7 +17,7 @@ function HomePage() {
             className="bg-primary bg-gradient main-image w-100"
             fluid
             src={
-              !isLoading ? "https://image.tmdb.org/t/p/w500" + randomItem.backdrop_path : randomItem.backdrop_path
+              !isLoading ? "https://image.tmdb.org/t/p/original" + randomItem.backdrop_path : randomItem.backdrop_path
             }
           />
 
