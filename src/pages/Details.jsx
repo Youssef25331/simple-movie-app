@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 
 export default function DetailsPage() {
   const params = useParams();
-  const [theme, setTheme, transparent, setTransparent] = useContext(AppTheme);
+  console.log(params.category)
   const { isLoading, data } = FetchingComponent(
     `https://api.themoviedb.org/3/${params.category}/${params.id}?language=en-US`,
   );
@@ -17,6 +17,7 @@ export default function DetailsPage() {
     params.category == "movie",
     params.id,
   );
+
   return (
     <div
       className="details-background"
@@ -36,12 +37,15 @@ export default function DetailsPage() {
           />
           <div className="ms-4 details-description-container">
             <h2 className="details-title">
-              {data.title || data.name || data.original_name ||"Loading"}
+              {data.title || data.name || data.original_name || "Loading"}
             </h2>
             <div className="d-flex flex-wrap genre">
               {!isLoading ?
                 data.genres.map((genre) => (
-                  <span key={genre.id}>{genre.name}</span>
+                  <a href={`/search/${params.category == "movie" ? "movies" : "tv"}/?Genres=${genre.id}`}>
+
+                    <span key={genre.id}>{genre.name}</span>
+                  </a>
                 )) : ""
               }
             </div>
