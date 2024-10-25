@@ -35,7 +35,7 @@ export default function DetailsPage() {
         <div className="d-flex top-details-container">
           <Image
             className="details-image"
-            src={!isLoading ? "https://image.tmdb.org/t/p/w500" + data.poster_path : require("../CardImage.png")}
+            src={!isLoading ? data.poster_path != null ? "https://image.tmdb.org/t/p/w500" + data.poster_path : require("../CardImage.png") : require("../CardImage.png")}
             rounded
           />
           <div className="ms-4 details-description-container">
