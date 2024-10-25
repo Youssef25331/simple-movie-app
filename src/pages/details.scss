@@ -22,15 +22,10 @@
 .details-hero-container {
   padding-top: 26vh;
   color: #fff;
-
-  .top-details-container {
-    padding-left: 16vw;
-  }
+  padding-left: 16vw;
 
   @include media-breakpoint-down(md) {
-    .top-details-container {
-      padding-left: 0;
-    }
+    padding-left: 0;
   }
 }
 
@@ -43,12 +38,26 @@
   }
 }
 
+.details-secondary-title {
+  color: $offwhite;
+  font-weight: 200;
+
+}
+
 .details-image {
   width: 20vw;
   height: 100%;
 
   @include media-breakpoint-down(md) {
     width: 40vw;
+  }
+}
+
+.extra-info {
+  margin-top: 2vh;
+
+  &>* {
+    margin-left: 8px;
   }
 }
 
@@ -72,8 +81,8 @@
     transition: 0.2s;
 
     &:hover {
-      border: 2px solid $lighter;
-      color: $lighter;
+      border: 2px solid $offwhite;
+      color: $offwhite;
     }
 
     @include media-breakpoint-down(lg) {
@@ -82,12 +91,46 @@
   }
 }
 
+.trailer-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 90%;
+  background: #000;
+  margin: 24px 0px;
+
+  @include media-breakpoint-down(md) {
+    max-width: 100%;
+  }
+}
+
+.trailer-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .cast-container {
+  font-size: 1.5vh;
+
   img {
     width: 8vw;
 
     @include media-breakpoint-down(md) {
       width: 16vw;
+    }
+  }
+
+  a {
+    transition: 0.3s;
+    color: $white;
+
+    &:hover {
+      color: $offwhite
     }
   }
 
@@ -98,4 +141,5 @@
       width: 16vw;
     }
   }
+
 }
