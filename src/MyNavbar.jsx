@@ -10,7 +10,13 @@ function MyNavbar() {
   const [theme] = useContext(AppTheme);
   const [transparent, setTransparent] = useState(false)
   const params = useParams()
-
+  function goBack() {
+    if (window.history.length > 1) {
+      window.history.go(-2); // Go back two entries
+    } else {
+      window.history.back();
+    }
+  }
   useEffect(() => {
     console.log(params.category)
     params.category == "movie" || params.category == "tv" ?
@@ -56,7 +62,7 @@ function MyNavbar() {
             </>
             :
             <>
-              <a href="javascript:window.history.back()" >
+              <a onClick={() => goBack()} >
                 <FontAwesomeIcon
                   size="2x"
                   icon={faArrowLeft}
