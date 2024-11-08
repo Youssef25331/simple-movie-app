@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 import SlideCarousel from "./SlideCarousel";
 import { Button, Image } from "react-bootstrap";
 import FetchingComponent from "./FetchComponent";
-import Card from "./Card";
 import { Link } from "react-router-dom";
 
 function HomePage() {
   const { isLoading, data } = FetchingComponent();
-  const randomItem = data.results[Math.floor(Math.random() * data.results.length)]
+  const randomItem = useMemo(() => {
+    return data?.results?.length ? data.results[Math.floor(Math.random() * data.results.length)] : null;
+  }, [data]);
   return (
     <div>
 
