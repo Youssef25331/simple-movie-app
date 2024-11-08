@@ -151,7 +151,6 @@
 }
 
 .hero-details {
-  display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 7;
   overflow: hidden;
@@ -165,6 +164,7 @@
   text-overflow: ellipsis;
 
   @include media-breakpoint-up(md) {
+    display: -webkit-box;
     font-size: 12px;
   }
 
