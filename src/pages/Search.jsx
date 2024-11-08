@@ -11,9 +11,6 @@ import {
 } from "react-bootstrap";
 import FetchingComponent from "../FetchComponent";
 import {
-  Link,
-  replace,
-  useNavigate,
   useParams,
   useSearchParams,
 } from "react-router-dom";
@@ -303,11 +300,11 @@ function Search() {
             placeholder="Click here to serach for..."
           />
         </div>
-          <div className="discover-container  mt-3">
-            {data.results.map((item) => (
-              <Card type={type} key={item.id} item={item} title={true} isLoading={isLoading}/>
-            ))}
-          </div>
+        <div className="discover-container  mt-3">
+          {data.results.map((item) => (
+            <Card type={type} key={item.id} item={item} title={true} isLoading={isLoading} />
+          ))}
+        </div>
       </div>
       <div className="position-absolute translate-middle-x mt-4 start-50 pagination-container">
         {lastPage ? (

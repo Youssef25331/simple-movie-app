@@ -10,6 +10,7 @@ function MyNavbar() {
   const [theme] = useContext(AppTheme);
   const [transparent, setTransparent] = useState(false)
   const params = useParams()
+
   function goBack() {
     if (window.history.length > 1) {
       window.history.go(-2); // Go back two entries
@@ -43,7 +44,7 @@ function MyNavbar() {
    }, [isTransparent]); */
 
   return (
-    <Navbar className={transparent ? "transparent-navbar" : ""} sticky="top" expand="sm" bg={theme} variant={theme}>
+    <Navbar className={transparent ? "transparent-navbar fixed-top" : "sticky-top"}  expand="sm" bg={theme} variant={theme}>
       <Container>
         {
           !transparent ?
@@ -53,8 +54,9 @@ function MyNavbar() {
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="toggle-navbar" />
               <Navbar.Collapse id="toggle-navbar" >
-                <Nav className="justify-content-center nav-links flex-grow-1 pe-3">
-                  <Nav.Link href="/search/movies" >Movies</Nav.Link>
+                <Nav className={"justify-content-center nav-links flex-grow-1 pe-3"}>
+                  <Nav.Link href="/">Home</Nav.Link>
+                  <Nav.Link href="/search/movies">Movies</Nav.Link>
                   <Nav.Link href="/search/tv">TV Shows</Nav.Link>
                 </Nav>
               </Navbar.Collapse>

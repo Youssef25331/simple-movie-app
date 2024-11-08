@@ -1,10 +1,10 @@
-import "./App.scss";
+import Search from "./pages/Search";
 import HomePage from "./HomePage";
-import { useState, createContext, useEffect } from "react";
+import { useState, createContext } from "react";
 import { createBrowserRouter, RouterProvider, Link, Outlet } from "react-router-dom";
 import MyNavbar from "./MyNavbar";
 import Details from "./pages/Details";
-import Search from "./pages/Search";
+import "./App.scss";
 
 export const AppTheme = createContext();
 
@@ -19,11 +19,11 @@ function Layout() {
 
 function App() {
   const [theme, setTheme] = useState("dark");
-  
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Layout />, 
+      element: <Layout />,
       children: [
         {
           path: "/",

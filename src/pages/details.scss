@@ -1,4 +1,4 @@
-@import "../App.scss";
+@use "../scss/" as *;
 
 .details-background {
   height: 60vh;
@@ -62,8 +62,15 @@
 }
 
 .details-description {
+  font-size: 10px;
+
   @include media-breakpoint-up(lg) {
     width: 40vw;
+  }
+
+  @include media-breakpoint-up(md) {
+
+    font-size: 16px;
   }
 }
 
@@ -121,7 +128,7 @@
     width: 8vw;
 
     @include media-breakpoint-down(md) {
-      width: 16vw;
+      width: 10vw;
     }
   }
 

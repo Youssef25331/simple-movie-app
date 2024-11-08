@@ -1,4 +1,4 @@
-//should reimplement with axion
+//should replace with axion
 import { useEffect, useState } from "react";
 
 export default function FetchingComponent(

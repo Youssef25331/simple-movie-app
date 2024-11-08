@@ -1,10 +1,8 @@
-import "./details.scss";
-import React, { useContext, useEffect } from "react";
-import { AppTheme } from "../App";
 import { Image } from "react-bootstrap";
 import FetchingComponent from "../FetchComponent";
 import getCredit from "./getCredit";
 import { useParams } from "react-router-dom";
+import "./details.scss";
 
 export default function DetailsPage() {
   const params = useParams();
