@@ -24,6 +24,11 @@
       transform: scale(1.2);
     }
   }
+
+  @include media-breakpoint-down(sm) {
+    margin-top: -6vh;
+    margin-bottom: -16vh;
+  }
 }
 
 .carousels-container {
@@ -44,6 +49,12 @@
   &-right {
     @extend .custom-arrow;
     background: linear-gradient(270deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 50%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  @include media-breakpoint-down(sm) {
+    .fa-icon {
+      font-size: 20px;
+    }
   }
 
   @include media-breakpoint-up(md) {
