@@ -2,8 +2,9 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useEffect, useState } from "react";
-import { AppTheme } from "./App";
+import { AppTheme } from "../../App";
 import { useParams } from "react-router-dom";
+import "./MyNavbar.scss";
 
 function MyNavbar() {
 
@@ -13,7 +14,8 @@ function MyNavbar() {
 
   function goBack() {
     if (window.history.length > 1) {
-      window.history.go(-2); // Go back two entries
+      window.history.back();
+      window.history.back();
     } else {
       window.history.back();
     }
@@ -44,7 +46,7 @@ function MyNavbar() {
    }, [isTransparent]); */
 
   return (
-    <Navbar className={transparent ? "transparent-navbar fixed-top" : "sticky-top"}  expand="sm" bg={theme} variant={theme}>
+    <Navbar className={transparent ? "transparent-navbar fixed-top" : `sticky-top bg-${theme}`} expand="sm" variant={theme}>
       <Container>
         {
           !transparent ?

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./Card.scss";
 
 export default function Card({ item, title, type ,isLoading}) {
   return (
@@ -25,7 +26,7 @@ export default function Card({ item, title, type ,isLoading}) {
         </div>
       </Link>
       {title ? (
-        <h3 className="m-2 text-center card-title">
+        <h3 className="card-title m-2 text-center ">
           {item.title || item.name}
         </h3>
       ) : (

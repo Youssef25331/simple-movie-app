@@ -1,0 +1,32 @@
+@use "../../scss/" as *;
+
+.card-overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: $card-transition;
+}
+
+.card-container {
+  &:hover {
+    .card-image {
+      background-size: 105% 105%;
+    }
+
+    .card-title {
+      color: $primary !important;
+    }
+
+    .card-overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+.card-title {
+  color: $white !important;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: $card-transition;
+}

@@ -1,8 +1,8 @@
-import { Image } from "react-bootstrap";
-import FetchingComponent from "../FetchComponent";
-import getCredit from "./getCredit";
-import { useParams } from "react-router-dom";
 import "./details.scss";
+import { Image } from "react-bootstrap";
+import FetchingComponent from "../../components/FetchingComponent/FetchComponent";
+import getCredit from "../../components/GetCredit/getCredit";
+import { useParams } from "react-router-dom";
 
 export default function DetailsPage() {
   const params = useParams();
@@ -33,7 +33,7 @@ export default function DetailsPage() {
         <div className="d-flex top-details-container">
           <Image
             className="details-image"
-            src={!isLoading ? data.poster_path != null ? "https://image.tmdb.org/t/p/w500" + data.poster_path : require("../CardImage.png") : require("../CardImage.png")}
+            src={!isLoading ? data.poster_path != null ? "https://image.tmdb.org/t/p/w500" + data.poster_path : require("../../CardImage.png") : require("../../CardImage.png")}
             rounded
           />
           <div className="ms-4 details-description-container">
@@ -68,7 +68,7 @@ export default function DetailsPage() {
         {
           video.results[0] ?
             <div className="trailer-container">
-              <iframe width="1080px" height="607px"
+              <iframe width="1080px" height="607px" 
                 src={"https://www.youtube.com/embed/" + video.results[0].key + "?autoplay=1&mute=0"}>
               </iframe>
             </div> : null

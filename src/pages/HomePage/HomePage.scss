@@ -1,0 +1,80 @@
+@use "../../scss/" as *;
+
+.main-image {
+  aspect-ratio: 1481/833;
+}
+
+.overlay {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 1) 100%);
+    opacity: 1;
+  }
+}
+
+.hero-details-container {
+  width: 50%;
+  top: 8%;
+  left: 4vw;
+
+  * {
+    display: none;
+  }
+
+  @include media-breakpoint-up(sm) {
+    * {
+      display: block;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    top: 20%;
+  }
+}
+
+.hero-name {
+  font-family: bebasregular, Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 8px $dark;
+  color: $white;
+  font-size: 1.7rem;
+
+  @include media-breakpoint-up(md) {
+    font-size: 2.5rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 4rem;
+  }
+}
+
+.hero-details {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+
+  color: $white;
+  font-weight: 300;
+  font-size: 10px;
+
+  text-overflow: ellipsis;
+
+  @include media-breakpoint-up(md) {
+    display: -webkit-box;
+    font-size: 12px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 40vw;
+    font-size: 14px;
+  }
+}

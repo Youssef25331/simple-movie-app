@@ -1,9 +1,11 @@
-import Carousel from "react-multi-carousel";
 import { Container, Image } from "react-bootstrap";
-import FetchingComponent from "./FetchComponent";
-import CustomArrow from "./CustomArrow";
+import Carousel from "react-multi-carousel";
 import { Link } from "react-router-dom";
 
+import FetchingComponent from "../FetchingComponent/FetchComponent";
+import CustomArrow from "./CustomArrow";
+
+import "./SlideCarousel.scss";
 function SlideCarousel({ isMovie = true, url, title }) {
   const responsive = {
     desktop: {

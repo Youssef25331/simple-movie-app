@@ -1,9 +1,9 @@
 import { useMemo } from "react";
-import SlideCarousel from "./SlideCarousel";
+import SlideCarousel from "../../components/SlideCarousel/SlideCarousel";
 import { Button, Image } from "react-bootstrap";
-import FetchingComponent from "./FetchComponent";
+import FetchingComponent from "../../components/FetchingComponent/FetchComponent";
 import { Link } from "react-router-dom";
-
+import "./HomePage.scss"; 
 function HomePage() {
   const { isLoading, data } = FetchingComponent();
   const randomItem = useMemo(() => {

@@ -1,11 +1,10 @@
-import Search from "./pages/Search";
-import HomePage from "./HomePage";
 import { useState, createContext } from "react";
 import { createBrowserRouter, RouterProvider, Link, Outlet } from "react-router-dom";
-import MyNavbar from "./MyNavbar";
-import Details from "./pages/Details";
+import HomePage from "./pages/HomePage/HomePage";
+import MyNavbar from "./components/MyNavbar/MyNavbar";
+import Details from "./pages/Details/Details";
+import Search from "./pages/Search/Search";
 import "./App.scss";
-
 export const AppTheme = createContext();
 
 function Layout() {

@@ -1,0 +1,53 @@
+@use "../../scss/" as *;
+
+.discover-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-gap: 16px;
+
+  .card-image {
+    height: 100%;
+    width: 100%;
+    transition: $card-transition;
+    background-color: #35383f;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    aspect-ratio: 2/3;
+  }
+}
+
+.search-container {
+  max-width: 1390px;
+}
+
+.search-bar,
+.filter-button {
+  height: 48px;
+  background-color: $darker;
+  color: $white;
+
+  &::placeholder {
+    color: $offwhite;
+  }
+
+  &:focus {
+    background-color: $darker;
+    color: $white;
+  }
+}
+
+.modal-content,
+.accordion-item {
+  background-color: $dark;
+  color: $white;
+
+  .accordion-button {
+    background-color: $dark;
+    color: $white;
+
+    &:not(.collapsed) {
+      background-color: $lighter;
+    }
+  }
+}

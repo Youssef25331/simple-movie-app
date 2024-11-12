@@ -1,4 +1,3 @@
-import Card from "../Card";
 import {
   Accordion,
   AccordionBody,
@@ -9,13 +8,15 @@ import {
   FormCheck,
   Modal,
 } from "react-bootstrap";
-import FetchingComponent from "../FetchComponent";
+import FetchingComponent from "../../components/FetchingComponent/FetchComponent";
 import {
   useParams,
   useSearchParams,
 } from "react-router-dom";
 import { useState, useMemo } from "react";
-import MyPagination from "../MyPagination";
+import MyPagination from "../../components/MyPagination/MyPagination";
+import Card from "../../components/Card/Card";
+import "./Search.scss";
 
 function Search() {
   const params = useParams();

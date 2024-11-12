@@ -1,4 +1,4 @@
-import FetchingComponent from "../FetchComponent";
+import FetchingComponent from "../FetchingComponent/FetchComponent";
 
 export default function getCredit(isMovie, id) {
   const moviesUrl = `https://api.themoviedb.org/3/movie/${id}/credits`;
