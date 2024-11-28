@@ -1,4 +1,4 @@
-import "./details.scss";
+import "./Details.scss";
 import { Image } from "react-bootstrap";
 import FetchingComponent from "../../components/FetchingComponent/FetchComponent";
 import getCredit from "../../components/GetCredit/getCredit";
@@ -14,7 +14,6 @@ export default function DetailsPage() {
     `https://api.themoviedb.org/3/${params.category}/${params.id}/videos?language=en-US`,
   );
 
-  console.log(data)
   const { creditLoading, credit } = getCredit(
     params.category == "movie",
     params.id,
