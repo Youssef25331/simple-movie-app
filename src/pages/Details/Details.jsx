@@ -67,14 +67,14 @@ export default function DetailsPage() {
         {
           video.results[0] ?
             <div className="trailer-container">
-              <iframe width="1080px" height="607px" 
+              <iframe width="1080px" height="607px"
                 src={"https://www.youtube.com/embed/" + video.results[0].key + "?autoplay=1&mute=0"}>
               </iframe>
             </div> : null
         }
         <div className="d-flex flex-column  cast-container mt-4">
           {!creditLoading && credit.cast[0] ? <h3>Cast</h3> : ""}
-          <div className="cast-member-container  d-flex flex-wrap">
+          <div className="cast-member-container d-flex flex-wrap">
             {!creditLoading
               ? credit.cast.slice(0, 15).map((actor) =>
                 actor.profile_path ? (

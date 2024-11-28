@@ -122,13 +122,13 @@
 }
 
 .cast-container {
-  font-size: 1.5vh;
+  font-size: 1.2vw;
 
   img {
     width: 8vw;
 
-    @include media-breakpoint-down(md) {
-      width: 10vw;
+    @include media-breakpoint-down(sm) {
+      width: 64px;
     }
   }
 
@@ -148,5 +148,11 @@
       width: 16vw;
     }
   }
+
+  @include media-breakpoint-down(sm) {
+
+  font-size: 12px;
+  }
+
 
 }
