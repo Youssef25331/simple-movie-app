@@ -1,5 +1,5 @@
 # About
-This is a responvie react movie app made using The Movie DB API. The user can either browse the main
+This is a responvie React movie app made using The Movie DB API. The user can either browse the main
 page with a list of popular or trending Movies/Shows or use the serach functionality to find something of intrest.
 ## Getting Started with The app
 
