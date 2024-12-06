@@ -14,9 +14,9 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 # Resource
 
-API: https://www.themoviedb.org
+API: [TMDB](https://www.themoviedb.org)
 
-Hosting: https://firebase.google.com
+Hosting: [Firebase](https://firebase.google.com)
 
 Images: [Unsplash](https://unsplash.com)
 
