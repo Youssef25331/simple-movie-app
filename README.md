@@ -1,6 +1,6 @@
 # About
-This is a responvie React movie app made using The Movie DB API. The user can either browse the main
-page with a list of popular or trending Movies/Shows or use the search functionality to find something of intrest.
+This is a responsive React movie app built with The Movie DB API. Users can explore a wide range of popular and trending movies and TV shows on the main page, or use the search functionality to quickly find specific titles of interest.
+
 ## Getting Started with The app
 
 In the project directory, you can run:
