@@ -12,7 +12,7 @@ Open [http://localhost](http://localhost:8080) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 # Resource
-Webstie:[MovieDB](https://moviedb-tan-seven.vercel.app)
+Webstie: [MovieDB](https://moviedb-tan-seven.vercel.app)
 
 API: [TMDB](https://www.themoviedb.org)
 
