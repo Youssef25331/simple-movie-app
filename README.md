@@ -15,7 +15,7 @@ You may also see any lint errors in the console.
 
 API: [TMDB](https://www.themoviedb.org)
 
-Hosting: [Firebase](https://firebase.google.com)
+Hosting: [Vercel](https://vercel.com)
 
 Images: [Unsplash](https://unsplash.com)
 
